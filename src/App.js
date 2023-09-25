@@ -35,7 +35,7 @@ function App() {
             <Link style={{ color: "black" }} class="nav-link active" aria-current="page" to="/students_for_mentor">Students For Mentor</Link>
           </li>
           <li class="nav-item">
-            <Link style={{ color: "black" }} class="nav-link active" aria-current="page" to="/previous_mentor_for_student">Previous Mentor for Student</Link>
+            <Link style={{ color: "black" }} class="nav-link active" aria-current="page" to="/previous_mentor_for_student">Previous Mentor for a Particular Student</Link>
           </li>
         </ul>
         <hr />

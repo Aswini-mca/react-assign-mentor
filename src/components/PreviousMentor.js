@@ -32,7 +32,7 @@ export function PreviousMentor() {
 }
 
 function Mentors({ mentor }) {
-    console.log(mentor)
+   
     return (
         <div>
             <div className="card-container">
