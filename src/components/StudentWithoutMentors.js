@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { API } from "../global"
+import { API } from "../global";
+
 export function StudentWithoutMentors() {
+  
   const [student, setStudent] = useState([]);
 
   const getStudents = () => {
@@ -26,12 +28,11 @@ function StudentsList({ student }) {
       <div className="card-container">
         {student.map((stud, index) => {
           return (
-            <div className="student-card">
+            <div className="student-card" key={index}>
               <h5>Student Id: {stud.studentId}</h5>
               <p>Name: {stud.name}</p>
               <p>Course: {stud.course}</p>
               <p>Batch: {stud.batch}</p>
-              <p>MentorId: {stud.mentorId}</p>
             </div>
           )
         })}

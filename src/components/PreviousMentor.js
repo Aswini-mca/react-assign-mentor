@@ -1,9 +1,19 @@
 import { useState } from "react";
-import { API } from "../global"
+import { API } from "../global";
 
 export function PreviousMentor() {
+
     const [studentId, setStudentId] = useState("");
     const [mentor, setMentor] = useState([]);
+
+    const require = (studentId) => {
+        if (studentId === "") {
+            return (
+                <div>StudentId is required(Give 1 to 4)</div>
+            )
+        }
+    }
+
     return (
         <div>
             <h3 className='container m-3'>Enter Student id to see previously assigned mentor for a particular student</h3>
@@ -11,7 +21,7 @@ export function PreviousMentor() {
                 <input className='form-control' type="text" placeholder="studentId"
                     value={studentId} onChange={(e) => { setStudentId(e.target.value) }}
                 /><br />
-                <button className="btn btn-primary"
+                <button className="btn btn-primary mb-3"
                     onClick={() => {
 
                         fetch(`${API}/previous_mentor_for_student/${studentId}`, {
@@ -26,13 +36,14 @@ export function PreviousMentor() {
                     }}
                 >Get Mentor</button>
             </div>
-            {mentor ? <Mentors mentor={mentor} /> : "Loading..."}
+            {mentor ? require(studentId) : null}
+            {mentor ? <Mentors mentor={mentor} /> : ""}
         </div>
     )
 }
 
 function Mentors({ mentor }) {
-   
+
     return (
         <div>
             <div className="card-container">

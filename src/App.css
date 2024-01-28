@@ -1,20 +1,23 @@
 .App {
   text-align: center;
 }
-/* body{
-  background-color: rgb(211, 233, 243);
-} */
-.student-card{
- display: flex;
- flex-wrap: wrap;
- justify-content: space-around;
- margin: 2em;
- padding: 1em;
- flex-direction: column;
- border: 1px solid;
- /* background-color:skyblue; */
+
+.student-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2em;
+  padding: 1em;
+  flex-direction: column;
+  text-align: justify;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.card-container{
+
+.student-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
